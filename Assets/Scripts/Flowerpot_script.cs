@@ -46,7 +46,7 @@ public class Flowerpot_script : MonoBehaviour
         Debug.Log("We are growing!");
 
         // Spawn the flower object
-        GameObject flower = Instantiate(FlowerPrefab, transform.position, Quaternion.identity);
+        GameObject flower = Instantiate(FlowerPrefab, transform.position, transform.rotation);
 
         // Make it so the flower sticks to us
         flower.transform.parent = this.transform;
