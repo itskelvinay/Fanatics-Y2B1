@@ -7,6 +7,7 @@ TagManager:
   - Anchor
   - Seed
   - Water
+  - Trash
   layers:
   - Default
   - TransparentFX
