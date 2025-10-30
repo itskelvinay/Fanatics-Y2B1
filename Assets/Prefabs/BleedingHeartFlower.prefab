@@ -174,7 +174,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 995f009152a14b242b32c21cffb07715, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2153caa03e5abda4e8bc16d88fb53f8c, type: 2}
+      objectReference: {fileID: 2100000, guid: 106c5bd2c75a85b4690aca5514df4d6b, type: 2}
     - target: {fileID: 919132149155446097, guid: 995f009152a14b242b32c21cffb07715, type: 3}
       propertyPath: m_Name
       value: bleedingheartStage1
@@ -245,7 +245,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 35e625711ba692d4ab7ac930d5217413, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 106c5bd2c75a85b4690aca5514df4d6b, type: 2}
+      objectReference: {fileID: 2100000, guid: 2153caa03e5abda4e8bc16d88fb53f8c, type: 2}
     - target: {fileID: 919132149155446097, guid: 35e625711ba692d4ab7ac930d5217413, type: 3}
       propertyPath: m_Name
       value: bleedingheartStage3
