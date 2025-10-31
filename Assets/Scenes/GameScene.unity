@@ -17,13 +17,13 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.012
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 1.07
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 97fca95f33987e548be9dd7c03cb1a96, type: 2}
@@ -35,7 +35,7 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.636
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_UseRadianceAmbientProbe: 0
@@ -11249,6 +11249,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -18.426
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9d66441def81851419509fbc2f2d4ad8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65a980d2c6d6fc74d934a41c0c349805, type: 2}
     - target: {fileID: 919132149155446097, guid: 9d66441def81851419509fbc2f2d4ad8, type: 3}
       propertyPath: m_Name
       value: TrashBags (6)
@@ -46792,6 +46796,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 18.65
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9d66441def81851419509fbc2f2d4ad8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65a980d2c6d6fc74d934a41c0c349805, type: 2}
     - target: {fileID: 919132149155446097, guid: 9d66441def81851419509fbc2f2d4ad8, type: 3}
       propertyPath: m_Name
       value: TrashBags (7)
@@ -65023,6 +65031,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a2dfd4fb452297b40b4bba08077bcc00, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a2dfd4fb452297b40b4bba08077bcc00, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a2dfd4fb452297b40b4bba08077bcc00, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a2dfd4fb452297b40b4bba08077bcc00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.28
