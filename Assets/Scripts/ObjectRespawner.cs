@@ -1,19 +1,22 @@
+using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 
 public class ObjectRespawner : MonoBehaviour
 {
     [SerializeField] private AudioClip secretClip;
+    [SerializeField] List<Transform> spawnPoints = new List<Transform>();
 
     private void OnCollisionEnter(Collision collision)
     {
-        collision.transform.position = new Vector3(22.78f, 27f, 5.54f);
+        collision.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].position;
         collision.gameObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
         GetComponent<AudioSource>().Play();
         if (collision.gameObject.CompareTag("Trash"))
         {
             GameObject.Instantiate(collision.gameObject);
             int trashCount = GameObject.FindGameObjectsWithTag("Trash").Length;
-            if(trashCount > 10)
+            if(trashCount > 15)
             {
                 GetComponent<AudioSource>().PlayOneShot(secretClip);
             }
