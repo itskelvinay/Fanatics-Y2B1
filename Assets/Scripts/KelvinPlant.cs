@@ -10,14 +10,23 @@ public class KelvinPlant : MonoBehaviour
     [Tooltip("List of objects to go through (in order)")]
     [SerializeField] GameObject[] models;
 
+    // Referance to the tree 
+    TreeGrowth tree; 
+
+
     // We need to keep track in case we need to switch back
     int lastModel;
+
+    bool isFullyGrown = false;
 
     /// <summary>
     /// Runs on start
     /// </summary>
     private void Start()
     {
+        // find tree
+        tree = GameObject.FindAnyObjectByType<TreeGrowth>();
+
         // Loop through all the models
         for (int i = 0; i < models.Length; i++)
         {
@@ -31,6 +40,8 @@ public class KelvinPlant : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        if(isFullyGrown) return;
+
         GrowABit();
 
         // Calculate the important stuff
@@ -78,7 +89,10 @@ public class KelvinPlant : MonoBehaviour
     /// </summary>
     void FullyGrown()
     {
+        tree.Grow();
         // This code gets run every frame if the plant has no mo models to go trough
         Debug.Log("Yay, I have grown!");
+        isFullyGrown = true;
+
     }
 }
