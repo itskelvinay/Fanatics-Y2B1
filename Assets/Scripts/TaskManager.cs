@@ -28,6 +28,10 @@ public class TaskManager : MonoBehaviour
     private bool stage1Grown = false;
     private bool stage2Grown = false;
     private bool stage5Grown = false;
+
+    public EndSequenceController endController; // assign in Inspector
+    private int currentStage = 0;
+
     private void Awake()
     {
         Instance = this;
@@ -130,6 +134,7 @@ public class TaskManager : MonoBehaviour
         {
             tree.Grow();
             stage1Grown = true;
+            if (endController) endController.StartEndSequence();
         }
 
        
@@ -137,6 +142,7 @@ public class TaskManager : MonoBehaviour
         {
             tree.Grow();
             stage2Grown = true;
+            if (endController) endController.StartEndSequence();
         }
 
      
@@ -144,6 +150,8 @@ public class TaskManager : MonoBehaviour
         {
             tree.Grow();
             stage5Grown = true;
+            if (currentStage >= 4 && endController)
+                endController.StartEndSequence();
         }
     }
     public bool IsTaskComplete(int taskNumber)
