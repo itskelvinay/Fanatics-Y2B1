@@ -27,21 +27,24 @@ public class EndSequenceController : MonoBehaviour
     }
     void Update()
     {
+
         if (started == true)
         {
-            PlayAfterCountdown();
+            if (invisibleCountdownSeconds >= 0)
+            {
+                invisibleCountdownSeconds -= Time.deltaTime;
+                Debug.Log(invisibleCountdownSeconds);
+            }
+            else
+                VideoPlane.SetActive(true);
+                StartCoroutine(PlayAfterCountdown());
+                started = true;
         }
     }
     private IEnumerator PlayAfterCountdown()
     {
-        if (invisibleCountdownSeconds >= 0)
-        {
-            invisibleCountdownSeconds -= Time.deltaTime;
-            Debug.Log(invisibleCountdownSeconds);
-        }
-        else
-        { // Fade to black
-            VideoPlane.SetActive(true);
+         // Fade to black
+            
             yield return StartCoroutine(FadeCanvas(0, 1, fadeDuration));
 
             // Play video
@@ -52,9 +55,6 @@ public class EndSequenceController : MonoBehaviour
             // Optional: fade back in after short delay
             yield return new WaitForSeconds(0.5f);
             yield return StartCoroutine(FadeCanvas(1, 0, fadeDuration));
-
-            started = false;
-        }
 
 
     }

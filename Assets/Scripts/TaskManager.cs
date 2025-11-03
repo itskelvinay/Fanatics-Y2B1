@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 [System.Serializable]
 public class Task
 {
@@ -129,6 +130,8 @@ public class TaskManager : MonoBehaviour
 
     private void Update()
     {
+        if (Keyboard.current.kKey.wasPressedThisFrame)
+            endController.StartEndSequence();
        
         if (IsTaskComplete(1) && !stage1Grown)
         {
@@ -145,12 +148,12 @@ public class TaskManager : MonoBehaviour
             
         }
 
-     
+
         if (IsTaskComplete(5) && !stage5Grown)
         {
             tree.Grow();
             stage5Grown = true;
-
+            Debug.Log("all task complete");
             endController.StartEndSequence();
         }
     }
