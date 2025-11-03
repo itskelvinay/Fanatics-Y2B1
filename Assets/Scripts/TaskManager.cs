@@ -134,7 +134,7 @@ public class TaskManager : MonoBehaviour
         {
             tree.Grow();
             stage1Grown = true;
-            if (endController) endController.StartEndSequence();
+     
         }
 
        
@@ -142,7 +142,7 @@ public class TaskManager : MonoBehaviour
         {
             tree.Grow();
             stage2Grown = true;
-            if (endController) endController.StartEndSequence();
+            
         }
 
      
@@ -150,8 +150,8 @@ public class TaskManager : MonoBehaviour
         {
             tree.Grow();
             stage5Grown = true;
-            if (currentStage >= 4 && endController)
-                endController.StartEndSequence();
+
+            endController.StartEndSequence();
         }
     }
     public bool IsTaskComplete(int taskNumber)
