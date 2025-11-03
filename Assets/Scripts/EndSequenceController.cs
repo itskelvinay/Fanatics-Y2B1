@@ -36,9 +36,11 @@ public class EndSequenceController : MonoBehaviour
                 Debug.Log(invisibleCountdownSeconds);
             }
             else
+            {
                 VideoPlane.SetActive(true);
                 StartCoroutine(PlayAfterCountdown());
-                started = true;
+                started = false;
+            }
         }
     }
     private IEnumerator PlayAfterCountdown()
