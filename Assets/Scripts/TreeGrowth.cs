@@ -29,4 +29,22 @@ public class TreeGrowth : MonoBehaviour
     {
         stages[index].SetActive(true);
     }
+
+
+//public void RevealFinalStage()
+//{
+//    // Only reveal the final stage if the tree has reached stage 2 first
+//    if (currentStage >= stages.Length - 2)
+//    {
+//        currentStage = stages.Length - 1;
+//        SetStage(currentStage);
+//        Debug.Log("Final tree stage revealed!");
+//    }
+//    else
+//    {
+//        Debug.Log("Final stage skipped: tree not ready yet.");
+//    }
+//}
+
+
 }

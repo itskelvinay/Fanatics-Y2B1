@@ -12,6 +12,7 @@ public class Flowerpot_script : MonoBehaviour
         // Do seed stuff
         if (collision.gameObject.CompareTag("Seed"))
         {
+
             Destroy(collision.gameObject); // Remove the seed from the scene
             hasSeed = true;
             TryToGrow();
@@ -38,7 +39,7 @@ public class Flowerpot_script : MonoBehaviour
         if (hasSeed && hasWater && !potOccupied)
         {
             Grow();
-        }
+        }   
     }
 
     void Grow()

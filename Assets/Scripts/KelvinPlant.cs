@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class KelvinPlant : MonoBehaviour
 {
+    public string type;
+
     // The amount the plant has grown (edit this)
     [Tooltip("The amount the plant has grown (edit this)")]
     [SerializeField] public float growth;
@@ -11,7 +13,7 @@ public class KelvinPlant : MonoBehaviour
     [SerializeField] GameObject[] models;
 
     // Referance to the tree 
-    TreeGrowth tree; 
+    TreeGrowth tree;
 
 
     // We need to keep track in case we need to switch back
@@ -40,7 +42,7 @@ public class KelvinPlant : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if(isFullyGrown) return;
+        if (isFullyGrown) return;
 
         GrowABit();
 
@@ -50,7 +52,7 @@ public class KelvinPlant : MonoBehaviour
         float scale = (modelGrowth / 2) + 0.5f;
 
         // Check if there are no more models to go
-        if(model >= models.Length)
+        if (model >= models.Length)
         {
             // Do something with the grown plant
             FullyGrown();
@@ -63,11 +65,11 @@ public class KelvinPlant : MonoBehaviour
         models[model].transform.localScale = new Vector3(scale, scale, scale);
 
         // Turn off old model if needed
-        if(lastModel != model)
+        if (lastModel != model)
         {
             // Set the scale of the old model to 0.
             models[lastModel].transform.localScale = new Vector3(0, 0, 0);
-            
+
             // Make this model the new 'lastModel'
             lastModel = model;
         }
@@ -89,10 +91,13 @@ public class KelvinPlant : MonoBehaviour
     /// </summary>
     void FullyGrown()
     {
-        tree.Grow();
+        TaskManager.Instance.RegisterGrownPlant(this);
+        TaskManager.Instance.CompleteTask(1);
+       
         // This code gets run every frame if the plant has no mo models to go trough
         Debug.Log("Yay, I have grown!");
         isFullyGrown = true;
 
     }
+
 }

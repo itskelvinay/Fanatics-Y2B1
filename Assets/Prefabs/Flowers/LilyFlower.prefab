@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1439e2e9704a55e499e832c18863df60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KelvinPlant
+  type: 2
   growth: 0
   models:
   - {fileID: 7077575667061039755}
