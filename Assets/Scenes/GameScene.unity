@@ -78637,7 +78637,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: b902a792f8c088c429e272d3617763ee, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 4b70fef8e3f3334438050309ab6373f5, type: 2}
+      objectReference: {fileID: 2100000, guid: cfa51ba6be0f06d4abe021015a0c9196, type: 2}
     - target: {fileID: 919132149155446097, guid: b902a792f8c088c429e272d3617763ee, type: 3}
       propertyPath: m_Name
       value: WateringCanister
