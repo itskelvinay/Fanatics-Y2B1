@@ -18,7 +18,7 @@ public class ObjectRespawner : MonoBehaviour
             int trashCount = GameObject.FindGameObjectsWithTag("Trash").Length;
             if(trashCount > 15)
             {
-                GetComponent<AudioSource>().PlayOneShot(secretClip);
+                
             }
         }
     }
