@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 [System.Serializable]
 public class Task
 {
@@ -28,6 +29,10 @@ public class TaskManager : MonoBehaviour
     private bool stage1Grown = false;
     private bool stage2Grown = false;
     private bool stage5Grown = false;
+
+    public EndSequenceController endController; // assign in Inspector
+    private int currentStage = 0;
+
     private void Awake()
     {
         Instance = this;
@@ -125,11 +130,14 @@ public class TaskManager : MonoBehaviour
 
     private void Update()
     {
+        if (Keyboard.current.kKey.wasPressedThisFrame)
+            endController.StartEndSequence();
        
         if (IsTaskComplete(1) && !stage1Grown)
         {
             tree.Grow();
             stage1Grown = true;
+     
         }
 
        
@@ -137,13 +145,16 @@ public class TaskManager : MonoBehaviour
         {
             tree.Grow();
             stage2Grown = true;
+            
         }
 
-     
+
         if (IsTaskComplete(5) && !stage5Grown)
         {
             tree.Grow();
             stage5Grown = true;
+            Debug.Log("all task complete");
+            endController.StartEndSequence();
         }
     }
     public bool IsTaskComplete(int taskNumber)
