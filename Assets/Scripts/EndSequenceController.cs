@@ -15,7 +15,7 @@ public class EndSequenceController : MonoBehaviour
     public Renderer videoRenderer;  // assign the Quad or Plane's Renderer (NEW)
 
     [Header("Countdown")]
-    public float invisibleCountdownSeconds = 20f;
+    public float invisibleCountdownSeconds = 10f;
 
     private bool started = false;
     [SerializedField] public GameObject EndSequence;
@@ -40,6 +40,7 @@ public class EndSequenceController : MonoBehaviour
                 VideoPlane.SetActive(true);
                 StartCoroutine(PlayAfterCountdown());
                 started = false;
+                Debug.Log(videoPlayer.isPlaying);
             }
         }
     }

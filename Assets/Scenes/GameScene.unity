@@ -43955,7 +43955,7 @@ MonoBehaviour:
   videoPlayer: {fileID: 806895288}
   videoAudio: {fileID: 0}
   videoRenderer: {fileID: 0}
-  invisibleCountdownSeconds: 20
+  invisibleCountdownSeconds: 5
   EndSequence: {fileID: 806895287}
   VideoPlane: {fileID: 270790844}
 --- !u!4 &806895290
